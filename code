@@ -1,0 +1,156 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
+{
+	int a[100],y,z,n=0,sum=0,sum1=0,b=0,p=0,q=0;
+	clrscr();
+	printf("enter your choice");
+	printf("\n 1.even \n 2.odd \n");
+	scanf("%d",&a[1]);
+	printf("enter number between 1 and 6 \t");
+	scanf("%d",&a[2]);
+	y= rand()%10;
+	if(y>6)
+	{
+		y=6;
+	}
+	if((a[2]+y)%2==0)
+	{
+		if(a[1]==1)
+		{
+			printf("you won the toss\n");
+			printf("enter choice 1.bat 2.bowl\t");
+			scanf("%d",&p);
+		}
+	}
+	else
+	{
+		printf("you lost the toss better luck next time\n");
+		printf("you need to bowl first\n");
+		q=2;
+	}
+	printf("start the game enter your scores in the console\n");
+	if(q==2 || p==2)
+	{
+	while(n!=10)
+	{
+		printf("enter your score\t");
+		scanf("%d",&b);
+		if(b>6)
+		{
+			b=6;
+		}
+		z=rand()%10;
+		if(z>6 || z==0)
+		{
+			z=6;
+		}
+		sum=sum+z;
+		printf("computer entered \t %d\n",z);
+		if(z==b)
+		{
+			printf("computer score is %d \t",sum);
+			n=10;
+		}
+		else
+		{
+			printf("proceed on \n");
+		}
+	}
+	printf("your target is \t %d\n",sum+1);
+	n=0;
+	while(n!=10)
+	{
+		printf("enter your score\t");
+		scanf("%d",&b);
+		if(b>6)
+		{
+			b=6;
+		}
+		sum1=sum1+b;
+		z=rand()%10;
+		if(z>6 || z==0)
+		{
+			z=6;
+		}
+		printf("computer entered \t %d\n",z);
+		if(sum1>sum)
+		{
+			printf("you won the game your score is \t %d \n",sum1);
+			n=10;
+		}
+		else if(z==b)
+		{
+			printf("computer won the game score is \t %d\n",sum);
+			n=10;
+		}
+		else
+		{
+			printf("proceed on \n");
+		}
+	}
+	}
+	if(p==1)
+	{
+	while(n!=10)
+	{
+		printf("enter your score\t");
+		scanf("%d",&b);
+		if(b>6)
+		{
+			b=6;
+		}
+		z=rand()%10;
+		if(z>6 && z==0)
+		{
+			z=6;
+		}
+		sum=sum+b;
+		printf("computer entered \t %d\n",z);
+		if(z==b)
+		{
+			printf("your score is %d \t",sum);
+			n=10;
+		}
+		else
+		{
+			printf("proceed on \n");
+		}
+	}
+	printf("computer target is \t %d defend it\n",sum+1);
+	n=0;
+	while(n!=10)
+	{
+		printf("enter your score\t");
+		scanf("%d",&b);
+		if(b>6)
+		{
+			b=6;
+		}
+		z=rand()%10;
+		if(z>6 && z==0)
+		{
+			z=6;
+		}
+		sum1=sum1+z;
+		printf("computer entered \t %d\n",z);
+		if(sum1>sum)
+		{
+			printf("computer won the game computers score is \t %d \n",sum1);
+			n=10;
+		}
+		else if(z==b)
+		{
+			printf("you won the game score is \t %d\n",sum);
+			n=10;
+		}
+		else
+		{
+			printf("proceed on \n");
+		}
+	}
+	}
+	getch();
+}
